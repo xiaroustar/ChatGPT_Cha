@@ -212,7 +212,7 @@
                         $.getJSON('https://v1.apigpt.cn/key/?key=' + api_key,
                         function(data) {
                             if (data.total_used === null) {
-                                results += '<tr style="text-align:center;color:red;"><td>' + api_key + '</td><td>接口疑似封禁或异常</td></tr>';
+                                results += '<tr style="text-align:center;color:red;"><td style="max-width: 100px; overflow: hidden; text-overflow: ellipsis;">' + api_key + '</td><td>接口疑似封禁或异常</td></tr>';
                                 results_write = api_key + '<br>';
                                 $.post("write_file.php", {
                                     file_name: '2023/' + ip + mytime + '-error-key.txt',
@@ -234,7 +234,7 @@
                             
                             
                             if (data.total_used > 5 && data.total_used != null) {
-                                results += '<tr style="text-align:center;"><td>' + api_key + '</td><td style="color:red;">接口额度大于5</td></tr>';
+                                results += '<tr style="text-align:center;"><td style="max-width: 100px; overflow: hidden; text-overflow: ellipsis;">' + api_key + '</td><td style="color:red;">接口额度大于5</td></tr>';
                                 results_write = api_key + '<br>';
                                 $.post("write_file.php", {
                                     file_name: '2023/' + ip + mytime + '-key-5.txt',
@@ -256,7 +256,7 @@
                             
                             
                             if (data.total_used <= 5 && data.total_used != null) {
-                                results += '<tr style="text-align:center;"><td>' + api_key + '</td><td style="color:green;">正常</td></tr>';
+                                results += '<tr style="text-align:center;"><td style="max-width: 100px; overflow: hidden; text-overflow: ellipsis;">' + api_key + '</td><td style="color:green;">正常</td></tr>';
                                 results_write = api_key + '<br>';
                                 $.post("write_file.php", {
                                     file_name: '2023/' + ip + mytime + '-ok.txt',
