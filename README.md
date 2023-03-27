@@ -15,6 +15,8 @@ Web环境即可，支持html、css、js、PHP；
 
 PHP环境：7.2；
 
+将里面的 cha.apigpt.cn 替换为你的主域即可，如：api.com
+
 # 更新日志
 
 -0327 v1.0
